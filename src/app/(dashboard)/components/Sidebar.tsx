@@ -15,8 +15,8 @@ const Sidebar = () => {
 
   return (
     <Router>
-      <div className="shadow-md">
-        <div className="w-[130px] h-[512px] mx-10 flex flex-col items-start mt-24 ">
+      <div className="shadow-md bg-slate-400">
+        <div className="w-[130px] h-[512px] mx-10 flex flex-col items-start mt-24 bg-slate-400">
         {sections.map((section, index) => (
           <Link to={section.link} key={index} className="my-4 flex flex-row items-center gap-4">
             {section.icon}

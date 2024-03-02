@@ -1,13 +1,27 @@
 "use client"
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
+
 import { Button } from '@/components/ui/button'
-import { Dialog } from '@/components/ui/dialog';
-import React from 'react'
+// import { Dialog } from '@/components/ui/dialog';
+import React, { useState } from 'react'
 import { AiOutlineDelete } from "react-icons/ai";
 import { MdDownload } from "react-icons/md";
-
+import clsx from 'clsx';
+import DialogBox from "./DialogBox";
+import { Span } from "next/dist/trace";
 
 const Records = () => {
+
+  const [record, setRecord] = useState(false);
 
   const records = [1, 2, 3];
   
@@ -17,7 +31,16 @@ const Records = () => {
         <h2 className='scroll-m-20 font-bold tracking-tight lg:text-5xl'>
           Records
         </h2>
-        <Button>+ Add Record  </Button>
+        {/* <Button>+ Add Record  </Button> */}
+        {/* <DialogBox trigger="+ Add Record" title="Add Records Form"}>
+        </DialogBox> */}
+        <DialogBox  trigger="+ Add Record" title="Add Records Form">
+          
+        </DialogBox>
+      </div>
+      <div>
+
+
       </div>
       <div className='mt-8 grid grid-cols-3 gap-16'>
         {records.map((record, index) => (
