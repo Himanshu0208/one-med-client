@@ -20,7 +20,11 @@ export default function DialogBox({
   title: string,
 }) {
 
-  const [images, setImages] = useState<any>();
+  const [record, setRecord] = useState({
+    images: "",
+    issue: "",
+    comment: "",
+  });
   const [showAppointment, setShowAppointment] = useState(false);
   const [showRecord, setShowRecord] = useState(false);
   const [appointment, setAppointment] = useState({
@@ -63,7 +67,14 @@ export default function DialogBox({
               <DialogDescription>
                 <form className="grid w-full max-w-sm items-center gap-1.5">
                   <Label htmlFor="picture">Picture</Label>
-                  <Input id="picture" type="file" onChange={(e) => setImages(e.target.value)} multiple/>
+                  <Input id="picture" type="file" onChange={(e) => setRecord({ ...record, images: e.target.value})} multiple required/>
+
+                  <Label htmlFor="issue">What  was the issue</Label>
+                  <Input id="issue" type="text" onChange={(e) => setRecord({ ...record, issue: e.target.value})} multiple required/>
+
+                  <Label htmlFor="comment">Comments (if Any)</Label>
+                  <Input id="comment" type="text-area" onChange={(e) => setRecord({ ...record, comment: e.target.value})} multiple required/>
+
                   <Button type="button" onClick={handleSubmitRecord} >Submit</Button>
                 </form >
               </DialogDescription>
