@@ -5,6 +5,7 @@ import { Dialog } from '@/components/ui/dialog';
 import React from 'react'
 import { AiOutlineDelete } from "react-icons/ai";
 import { MdDownload } from "react-icons/md";
+import DialogBox from './DialogBox';
 // import { useNavigate } from 'react-router-dom';
 
 
@@ -25,7 +26,7 @@ const Family = () => {
         <h2 className='scroll-m-20 font-bold tracking-tight lg:text-5xl'>
             Family
         </h2>
-        <Button>+ Add Family </Button>
+        <DialogBox />
       </div>
       <div className='mt-8 grid grid-cols-3 gap-16'>
         {family.map((member, index) => (
